@@ -1,6 +1,8 @@
 class Clipper < ActiveRecord::Base
   attr_accessible :url
 
+  validates :url, :presence => true, :format => {:with => /^((http|https):\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+).[a-z]{2,5}(:[0-9]{1,5})?(\/.)?$/ix}
+
   def create_clip!
     self.clip = self.id.to_s(36)
     self.save
