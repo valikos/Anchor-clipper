@@ -16,3 +16,13 @@ div.input-append.centered{
   width: 200px;
   margin: 0 auto;
 }
+.wrap{
+  position:absolute;
+  width:500px;
+  height:100px;
+  left:50%;
+  top:50%;
+  margin-left:-250px;
+  margin-top:-50px;
+  text-align:center
+}
