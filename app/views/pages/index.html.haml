@@ -1,4 +1,5 @@
-.input-append.centered
-  = url_field_tag 'appendedInputButton', nil, :class => 'input-xlarge'
-  = button_tag(:type => 'button', :class => 'btn') do
-    = content_tag(:strong, 'Clip!')
+.input-append
+  = form_tag('#') do
+    = url_field_tag 'appendedInputButton', nil, :class => 'input-xlarge'
+    = button_tag(:type => 'submit', :class => 'btn') do
+      = content_tag(:strong, 'Clip!')

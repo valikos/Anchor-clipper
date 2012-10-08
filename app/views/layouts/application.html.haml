@@ -38,7 +38,8 @@
 
       .row-fluid
         .span12
-          = yield
+          .wrap
+            = yield
         / .span3
         /   .well.sidebar-nav
         /     %ul.nav.nav-list
@@ -47,8 +48,8 @@
         /       %li= link_to "Link 2", "/path2"
         /       %li= link_to "Link 3", "/path3"
 
-      %footer
-        %p &copy; Company 2012
+      / %footer
+      /   %p &copy; Company 2012
     /
       Javascripts
       \==================================================
