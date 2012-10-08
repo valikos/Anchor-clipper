@@ -1,0 +1,2 @@
+class ClippersController < ApplicationController
+end
