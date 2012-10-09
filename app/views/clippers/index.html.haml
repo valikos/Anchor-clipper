@@ -1,0 +1,4 @@
+.input-append
+  = form_for @clipper do |f|
+    = f.url_field :url, :class => 'input-xlarge'
+    = f.submit 'Clip', :class => 'btn btn-inverse'
