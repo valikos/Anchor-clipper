@@ -4,16 +4,22 @@ $(document).ready(function(){
     url: myForm.attr('action') + '.json',
     dataType: 'json',
     success: function(res, status, xhr){
-      console.log(res, status, xhr)
       if(status === "success"){
         if(res.ac > 0){
           myForm.clearForm()
+          $('#clipper-clip').html(res.clipper.clip);
+          $('#clipper-box').fadeIn();
         }
         if(res.ac < 0){
-          console.log('Error')
+          $('#error-box').fadeIn(300, function(){
+            $('#error-box').delay(2000).fadeOut(300);
+          });
         }
       }
     }
   }
   $("#new_clipper").ajaxForm(options)
+  $('#cliper-box-close').click(function(e){
+    $('#clipper-box').fadeOut();
+  });
 });
