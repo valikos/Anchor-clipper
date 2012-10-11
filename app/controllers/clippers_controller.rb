@@ -4,6 +4,15 @@ class ClippersController < ApplicationController
     @clipper = Clipper.new
   end
 
+  def show
+    clip = Clipper.find_by_clip(params[:id])
+    if clip
+      redirect_to clip.url and return
+    else
+      redirect_to root_path
+    end
+  end
+
   def create
     @clipper = Clipper.new(params[:clipper])
     respond_to do |format|

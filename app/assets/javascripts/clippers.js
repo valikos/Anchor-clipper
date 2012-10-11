@@ -8,6 +8,8 @@ $(document).ready(function(){
       if(status === "success"){
         if(res.ac > 0){
           myForm.clearForm()
+          $('#clipper-clip').html(res.clipper.clip);
+          $('#clipper-box').fadeIn();
         }
         if(res.ac < 0){
           console.log('Error')
@@ -16,4 +18,13 @@ $(document).ready(function(){
     }
   }
   $("#new_clipper").ajaxForm(options)
+
+
+
+  $('#on').click(function(e){
+    $('#clipper-box').fadeIn();
+  });
+  $('#off').click(function(e){
+    $('#clipper-box').fadeOut();
+  });
 });
