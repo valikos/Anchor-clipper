@@ -3,17 +3,14 @@
     = f.url_field :url, :class => 'input-xlarge'
     = f.submit 'Clip', :class => 'btn btn-inverse'
 
-  #clipper-box.input-prepend.input-append(style="display:none")
-    %span(class="add-on")
-      = image_tag("anchor.png", :size => "16x16")
-      clip
-    %span(class="input-large uneditable-input" id="clipper-clip")
-      Some value here
-    %button(class="btn btn-danger")
-      %i.icon-remove{title: :'Close clip'}
+#clipper-box.input-prepend.input-append(style="display:none")
+  %span(class="add-on")
+    = image_tag("anchor.png", :size => "16x16")
+    clip
+  %span(class="input-large uneditable-input" id="clipper-clip")
+    Some value here
+  %button(class="btn btn-danger" id="cliper-box-close")
+    %i.icon-remove{title: :'Close clip'}
 
-  .btn-group
-    %button(class="btn btn-success" id="on")
-      %i.icon-fire
-    %button(class="btn btn-danger" id="off")
-      %i.icon-fire
+#error-box.alert.alert-error(style="margin:0 auto;width:280px;display:none")
+  Can't clip Your URL, it is wrong!
