@@ -1,0 +1,17 @@
+%h1 Listing qweasds
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @qweasds.each do |qweasd|
+    %tr
+      %td= link_to 'Show', qweasd
+      %td= link_to 'Edit', edit_qweasd_path(qweasd)
+      %td= link_to 'Destroy', qweasd, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Qweasd', new_qweasd_path

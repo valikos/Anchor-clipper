@@ -17,4 +17,6 @@ group :assets do
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 end
 
+gem 'pry-rails', group: 'development'
+
 gem 'jquery-rails'

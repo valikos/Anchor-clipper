@@ -19,13 +19,13 @@ class ClippersController < ApplicationController
       if @clipper.save
         @clipper.create_clip!
         format.html { redirect_to root_path, notice: 'Looks good' }
-        format.json { render json: {clipper: @clipper, ac: 1}, status: :created }
+        format.json { render json: @clipper, status: :created, location: @clipper }
       else
         format.html do
           flash[:error] = 'Error'
           redirect_to root_path
         end
-        format.json { render json: {clipper: @clipper, ac: -1, errors: @clipper.errors}, status: :ok }
+        format.json { render json: @clipper.errors, status: :unprocessable_entity }
       end
     end
   end
